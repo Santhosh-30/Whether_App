@@ -10,63 +10,54 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .app {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     background: #ffffff76;
     border-radius: 15px;
     box-shadow: 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding: 20px;
+    min-height: 100%; /* Ensure app covers full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .search-box {
     display: flex;
     justify-content: center;
     padding: 10px;
-    position: relative;
-    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .search-box input {
-    width: 100%;
+    flex: 1;
+    min-width: 60%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     outline: none;
     font-size: 16px;
-    padding-right: 40px; 
 }
 
 .search-box button {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 50px;
     border: none;
-    background: transparent;
+    background: #76c7f5;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.search-box button img {
-    width: 20px;
-    height: 20px;
-}
-
-
-@media (max-width: 768px) {
-    .search-box button img {
-        width: 16px;
-        height: 16px;
-    }
+    color: #fff;
 }
 
 .city-name {
@@ -130,11 +121,10 @@ body {
     background: #f9f9f967;
     padding: 10px;
     border-radius: 10px;
-    width: 48%;
+    width: 18%;
     text-align: center;
-    margin: 5px 0;
+    margin: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
 }
 
 .forecast .day p {
@@ -160,11 +150,43 @@ body {
     color: red;
 }
 
-
-@media (max-width: 768px) {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
     .app {
-        width: 90%;
+        width: 100%;
         padding: 15px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input, .search-box button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .forecast {
+        justify-content: center;
+    }
+
+    .forecast .day {
+        width: 45%;
+        margin-bottom: 10px;
+    }
+
+    .weather-info .whether-data h2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .city-name {
+        font-size: 20px;
+    }
+
+    .date-time {
+        font-size: 12px;
     }
 
     .forecast .day {
@@ -172,7 +194,7 @@ body {
     }
 
     .weather-info .whether-data h2 {
-        font-size: 36px;
+        font-size: 28px;
     }
 
     .weather-info .weather-icon {
