@@ -14,10 +14,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .app {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     background: #ffffff76;
     border-radius: 15px;
     box-shadow: 20px rgba(0, 0, 0, 0.1);
@@ -32,7 +34,7 @@ body {
 }
 
 .search-box input {
-    width: 75%;
+    width: 70%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
@@ -121,21 +123,77 @@ body {
 .forecast .day p {
     font-size: 14px;
     margin: 5px 0;
-
 }
 
-.forecast-wrapper h3{
+.forecast-wrapper h3 {
     margin-top: 20px;
     text-align: center;
 }
-.forecast-temp-wrapper span{
-    display: block  ;
+
+.forecast-temp-wrapper span {
+    display: block;
     font-size: 13px;
-    
 }
+
 .forecast .day .temp {
     font-size: 16px;
 }
-.error{
-    color:red;
+
+.error {
+    color: red;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .app {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .forecast {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecast .day {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .search-box input {
+        width: 65%;
+        font-size: 14px;
+    }
+
+    .weather-info .whether-data h2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .city-name {
+        font-size: 20px;
+    }
+
+    .date-time {
+        font-size: 12px;
+    }
+
+    .search-box input {
+        width: 60%;
+        font-size: 12px;
+    }
+
+    .weather-info .whether-data h2 {
+        font-size: 28px;
+    }
+
+    .weather-info .weather-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .forecast .day {
+        width: 100%;
+    }
 }
