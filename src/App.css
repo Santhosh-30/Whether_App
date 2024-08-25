@@ -10,7 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,10 @@ body {
     box-shadow: 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding: 20px;
+    min-height: 100%; /* Ensure app covers full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .search-box {
