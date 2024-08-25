@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: url(./assets/Whether.jpeg);
+    background: linear-gradient(to bottom, #9ec5f8, #f4e3b7);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
