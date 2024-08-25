@@ -31,10 +31,12 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 .search-box input {
-    width: 70%;
+    flex: 1;
+    min-width: 60%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
@@ -108,13 +110,14 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px 10px;
+    flex-wrap: wrap;
 }
 
 .forecast .day {
     background: #f9f9f967;
     padding: 10px;
     border-radius: 10px;
-    width: 20%;
+    width: 18%;
     text-align: center;
     margin: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -146,23 +149,26 @@ body {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .app {
-        width: 90%;
+        width: 100%;
         padding: 15px;
     }
 
-    .forecast {
+    .search-box {
         flex-direction: column;
-        align-items: center;
     }
 
-    .forecast .day {
-        width: 80%;
+    .search-box input, .search-box button {
+        width: 100%;
         margin-bottom: 10px;
     }
 
-    .search-box input {
-        width: 65%;
-        font-size: 14px;
+    .forecast {
+        justify-content: center;
+    }
+
+    .forecast .day {
+        width: 45%;
+        margin-bottom: 10px;
     }
 
     .weather-info .whether-data h2 {
@@ -179,9 +185,8 @@ body {
         font-size: 12px;
     }
 
-    .search-box input {
-        width: 60%;
-        font-size: 12px;
+    .forecast .day {
+        width: 100%;
     }
 
     .weather-info .whether-data h2 {
@@ -191,9 +196,5 @@ body {
     .weather-info .weather-icon {
         width: 80px;
         height: 80px;
-    }
-
-    .forecast .day {
-        width: 100%;
     }
 }
